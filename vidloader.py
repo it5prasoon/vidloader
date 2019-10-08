@@ -48,7 +48,7 @@ def quit():
 
 def select():
     try:
-        choice = input("SnapTub~# ")
+        choice = input("Select~# ")
         if choice == 1:
             os.system("clear")
             print """
