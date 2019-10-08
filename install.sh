@@ -17,8 +17,8 @@ echo "[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ];
 then
     echo "[◉] A directory VidLoader was found! Do you want to replace it? [Y/n]:" ;
-    read mama
-    if [ $mama == "y" ] ;
+    read decision
+    if [ $decision == "y" ] ;
     then
       sudo rm -R "$INSTALL_DIR"
     else
@@ -38,7 +38,7 @@ chmod +x vidloader;
 sudo cp vidloader /usr/bin/;
 
 
-if [ -d "$INSTALL_DIR/PyTube" ];
+if [ -d "$INSTALL_DIR/vidloader" ];
 then
     echo "";
     echo "[✔] All the tools are installed successfully!! [✔]";
