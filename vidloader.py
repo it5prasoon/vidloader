@@ -7,7 +7,7 @@ import sys
 
 os.system("clear && clear && clear")
 
-print """
+print ("""
 
         _________ ______   _        _______  _______  ______   _______  _______ 
 |\     /|\__   __/(  __  \ ( \      (  ___  )(  ___  )(  __  \ (  ____ \(  ____ )
@@ -21,10 +21,10 @@ print """
           >>>>>>>>>>>>>>>>>>>>>>>>>>>    }--{+} Coded By Prasoon {+}--{
                  >>>>>>>>>>>>>>>>>>>>>>>>>>>>   }----{+}  fb.me/prasoon0  {+}----{
 
-       """
+     """)
        
 
-print ('Select the download option')
+print('Select the download option')
 menu = '''\033[0m
     1.Video (Youtube,openload etc)
     2.Audio Download
@@ -32,7 +32,7 @@ menu = '''\033[0m
 
     {99}-Exit
  '''
-print menu
+print (menu)
 
 
 def quit():
@@ -41,8 +41,8 @@ def quit():
         exit()
     else:
         os.system("clear")
-        print logo
-        print menu
+        print (logo)
+        print (menu)
         select()
 
 
@@ -51,7 +51,7 @@ def select():
         choice = input("Select~# ")
         if choice == 1:
             os.system("clear")
-            print """
+            print ("""
  __ __  ____  ___      ___   ___   _____
 |  |  ||    ||   \    /  _] /   \ / ___/
 |  |  | |  | |    \  /  [_ |     (   \_ 
@@ -62,7 +62,7 @@ def select():
                                         
   
 PUT URL EX: https://www.youtube.com/watch?v=KYHGFg124e
-"""
+""")
             ydl_opts = {}
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([raw_input('URL: ')])
@@ -70,7 +70,7 @@ PUT URL EX: https://www.youtube.com/watch?v=KYHGFg124e
             quit()
         elif choice == 2:
             os.system("clear")
-            print """
+            print ("""
  
   ____  __ __  ___    ____  ___  
  /    ||  |  ||   \  |    |/   \ 
@@ -82,7 +82,7 @@ PUT URL EX: https://www.youtube.com/watch?v=KYHGFg124e
                  
 
 PUT URL EX: https://www.youtube.com/watch?v=KTHGFg124e
-"""
+""")
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
@@ -115,7 +115,7 @@ EX: https://www.youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU
             print("")
             quit()
     except(KeyboardInterrupt):
-        print ""
+        print ("")
 
 
 select()
