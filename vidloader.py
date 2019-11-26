@@ -36,12 +36,11 @@ print (menu)
 
 
 def quit():
-    con = raw_input('Continue [Y/n] -> ')
+    con = input('Continue [Y/n] -> ')
     if con[0].upper() == 'N':
         exit()
     else:
         os.system("clear")
-        print (logo)
         print (menu)
         select()
 
@@ -65,7 +64,7 @@ PUT URL EX: https://www.youtube.com/watch?v=KYHGFg124e
 """)
             ydl_opts = {}
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([raw_input('URL: ')])
+                ydl.download([input('URL: ')])
             print("")
             quit()
         elif choice == 2:
@@ -92,7 +91,7 @@ PUT URL EX: https://www.youtube.com/watch?v=KTHGFg124e
                 }],
             }
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([raw_input('URL: ')])
+                ydl.download([input('URL: ')])
             quit()
         elif choice == 3:
             os.system("clear")
@@ -109,7 +108,7 @@ PUT URL EX: https://www.youtube.com/watch?v=KTHGFg124e
 
 EX: https://www.youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU
 """)
-            d3 = raw_input('playlist URL: ')
+            d3 = input('playlist URL: ')
             os.system("clear")
             os.system("youtube-dl -cit --extract-audio --audio-format mp3 " + d3)
             print("")
