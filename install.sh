@@ -11,43 +11,39 @@ echo "
                                                                                         
 ";
 
-INSTALL_DIR="/usr/share/doc/vidloader"
-
 echo "[✔] Checking directories...";
-if [ -d "$INSTALL_DIR" ];
+if [ -d "/usr/share/doc/Vidloader" ] ;
 then
-echo "[◉] A directory VidLoader was found! Do you want to replace it? [Y/n]:" ;
-read decision
-if [ $decision == "y" ] ;
+echo "[◉] A directory Vidloader was found! Do you want to replace it? [Y/n]:" ; 
+read mama
+if [ $mama == "y" ] ; 
 then
-sudo rm -R "$INSTALL_DIR"
+ rm -R "/usr/share/doc/Vidloader"
 else
-exit
+ exit
 fi
 fi
 
-echo "[✔] Installing ...";
+ echo "[✔] Installing ...";
+ echo "";
+ git clone https://github.com/it5prasoon/vidloader.git /usr/share/doc/Vidloader;
+ echo "#!/bin/bash 
+ python /usr/share/doc/Vidloader/vidloader.py" '${1+"$@"}' > vidloader;
+ chmod +x vidloader;
+ sudo cp vidloader /usr/bin/;
+ rm vidloader;
+
+
+if [ -d "/usr/share/doc/Vidloader" ] ;
+then
 echo "";
-sudo apt-get install -y python-pip
-sudo pip install --upgrade youtube_dl
-sudo apt-get install -y ffmpeg
-git clone https://github.com/it5prasoon/vidloader.git $INSTALL_DIR;
-echo "#!/bin/bash
-python $INSTALL_DIR/vidloader.py" '${1+"$@"}' > vidloader;
-chmod +x vidloader;
-sudo cp vidloader /usr/bin/;
-rm vidloader;
-
-if [ -d "$INSTALL_DIR/vidloader" ];
-then
-    echo "";
-    echo "[✔] All the tools are installed successfully!! [✔]";
-    echo "";
-    echo "[✔]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>[✔]";
-    echo "[✔] ✔✔✔  All is done!! Now you can Pirate Videos With VidLoader !  ✔✔✔ [✔]";
-    echo "[✔]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>[✔]";
-    echo "";
+echo "[✔]Tool istalled with success![✔]";
+echo "";
+  echo "[✔]====================================================================[✔]";
+  echo "[✔] ✔✔✔ All is done!! You can execute tool by typing Vidloader  !   ✔✔✔ [✔]"; 
+  echo "[✔]====================================================================[✔]";
+  echo "";
 else
-    echo "[✘] Installation failed![✘] ";
-    exit
+  echo "[✘] Installation failed![✘] ";
+  exit
 fi
