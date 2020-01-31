@@ -30,7 +30,7 @@ echo "[✔] Installing ...";
 echo "";
 sudo apt-get install -y python-pip
 sudo pip install --upgrade youtube_dl
-sudo apt-get install -y libav-tools
+sudo apt-get install -y ffmpeg
 git clone https://github.com/it5prasoon/vidloader.git $INSTALL_DIR;
 echo "#!/bin/bash
 python $INSTALL_DIR/vidloader.py" '${1+"$@"}' > vidloader;
