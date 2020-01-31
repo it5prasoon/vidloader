@@ -11,19 +11,19 @@ echo "
                                                                                         
 ";
 
- INSTALL_DIR="/usr/share/doc/vidloader"
+INSTALL_DIR="/usr/share/doc/vidloader"
 
 echo "[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ];
 then
-    echo "[◉] A directory VidLoader was found! Do you want to replace it? [Y/n]:" ;
-    read decision
-    if [ $decision == "y" ] ;
-    then
-      sudo rm -R "$INSTALL_DIR"
-    else
-        exit
-    fi
+echo "[◉] A directory VidLoader was found! Do you want to replace it? [Y/n]:" ;
+read decision
+if [ $decision == "y" ] ;
+then
+sudo rm -R "$INSTALL_DIR"
+else
+exit
+fi
 fi
 
 echo "[✔] Installing ...";
@@ -36,7 +36,7 @@ echo "#!/bin/bash
 python $INSTALL_DIR/vidloader.py" '${1+"$@"}' > vidloader;
 chmod +x vidloader;
 sudo cp vidloader /usr/bin/;
-
+rm vidloader;
 
 if [ -d "$INSTALL_DIR/vidloader" ];
 then
