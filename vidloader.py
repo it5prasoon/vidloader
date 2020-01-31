@@ -115,6 +115,4 @@ EX: https://www.youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU
             quit()
     except(KeyboardInterrupt):
         print ("")
-
-
-select()
+        select()
